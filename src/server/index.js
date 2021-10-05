@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const http = require('http');
+const path = require('path');
 const { Server } = require("socket.io");
 
 const app = express();
@@ -10,7 +11,7 @@ const io = new Server(server);
 
 app.get('/', (req, res) =>
 {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(path.join(__dirname, "/../client/index.html"));
 });
 
 io.on('connection', (socket) =>
