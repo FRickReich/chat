@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-app.use('/public', express.static(path.join(__dirname, '/../client/'), { index: false }));
+app.use('/public', express.static(path.join(__dirname, '/../client/public/'), { index: false }));
 
 app.get('/', (req, res) =>
 {
